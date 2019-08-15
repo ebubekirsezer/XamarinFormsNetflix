@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinFormsNetflix.Views.UserPage"
+             BackgroundColor="#0D0D0D"
+             NavigationPage.HasBackButton="False">
+    <NavigationPage.TitleView>
+        <Grid>
+            <Button BackgroundColor="Transparent"
+                Text="Düzenle"
+                VerticalOptions="Center"
+                HorizontalOptions="EndAndExpand"
+                FontSize="14"
+                TextColor="White"/>
+            <Image Source="netflix"
+                   Aspect="AspectFit"
+               WidthRequest="75"
+               HeightRequest="75"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+        </Grid>
+    </NavigationPage.TitleView>
+    <ScrollView>
+        <Grid Margin="20">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.1*"/>
+                <RowDefinition Height="0.2*"/>
+                <RowDefinition Height="0.1*"/>
+            </Grid.RowDefinitions>
+            <Label Text="Kim izliyor?"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               Grid.Row="0"
+               TextColor="White"
+               FontSize="16"/>
+            <Grid Grid.Row="1">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="person1"
+                   WidthRequest="100"
+                   HeightRequest="100"
+                   Aspect="AspectFit"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Grid.Column="0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="person2"
+                   Aspect="AspectFit"
+                       WidthRequest="100"
+                       HeightRequest="100"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Grid.Column="1">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"
+                  Text="Ebubekir"
+                  VerticalOptions="Start"
+                  HorizontalOptions="Center"
+                  TextColor="White"
+                  FontSize="16"/>
+                <Label Grid.Column="1"
+                  Text="Ömer"
+                  VerticalOptions="Start"
+                  HorizontalOptions="Center"
+                  TextColor="White"
+                  FontSize="16"/>
+            </Grid>
+            <Grid Grid.Row="3">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <Image Source="person3"
+                   Aspect="AspectFit"
+                   VerticalOptions="Center"
+                       WidthRequest="100"
+                       HeightRequest="100"
+                   HorizontalOptions="Center"
+                   Grid.Column="0">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+                <Image Source="person4"
+                   Aspect="AspectFit"
+                       WidthRequest="100"
+                       HeightRequest="100"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"
+                   Grid.Column="1">
+                    <Image.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                    </Image.GestureRecognizers>
+                </Image>
+            </Grid>
+            <Grid Grid.Row="4">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.5*"/>
+                    <ColumnDefinition Width="0.5*"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="0"
+                  Text="Bahar"
+                  VerticalOptions="Start"
+                  HorizontalOptions="Center"
+                  TextColor="White"
+                  FontSize="16"/>
+                <Label Grid.Column="1"
+                  Text="Barış"
+                  VerticalOptions="Start"
+                  HorizontalOptions="Center"
+                  TextColor="White"
+                  FontSize="16"/>
+            </Grid>
+            <Image Grid.Row="5"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+                   WidthRequest="100"
+                   HeightRequest="100"
+               Source="person5"
+               Aspect="AspectFit">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="TapGestureRecognizer_Tapped"/>
+                </Image.GestureRecognizers>
+            </Image>
+            <Label Text="Ahmet"
+               Grid.Row="6"
+               TextColor="White"
+               FontSize="16"
+               HorizontalOptions="Center"
+               VerticalOptions="Start"/>
+        </Grid>
+    </ScrollView>
+</ContentPage>

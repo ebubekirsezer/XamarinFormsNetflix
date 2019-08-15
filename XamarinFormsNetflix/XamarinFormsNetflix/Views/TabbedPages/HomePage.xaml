@@ -1,0 +1,206 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinFormsNetflix.Views.TabbedPages.HomePage"
+              NavigationPage.HasBackButton="False"
+             NavigationPage.HasNavigationBar="False"
+              Title="Ana Sayfa"
+             IconImageSource="home"
+             BackgroundColor="#0D0D0D">
+    <ScrollView VerticalOptions="FillAndExpand">
+        <StackLayout Orientation="Vertical"
+                     Spacing="0">
+            <Grid>
+                <Grid VerticalOptions="Start"
+                      HorizontalOptions="Start">
+                    <Image Source="peaky"
+                   VerticalOptions="Center"
+                   HorizontalOptions="StartAndExpand"
+                   Aspect="AspectFill"/>
+                    <StackLayout Orientation="Horizontal">
+                        <Image Source="netflixicon"
+                       Aspect="AspectFit"
+                           Margin="10"
+                       VerticalOptions="Start"
+                       HorizontalOptions="FillAndExpand"/>
+                        <Label Text="Diziler"
+                       TextColor="White"
+                           Margin="10"
+                       FontSize="18"
+                       VerticalOptions="Start"
+                       HorizontalOptions="FillAndExpand"/>
+                        <Label Text="Filmler"
+                           Margin="10"
+                       TextColor="White"
+                       FontSize="18"
+                       VerticalOptions="Start"
+                       HorizontalOptions="FillAndExpand"/>
+                        <Label Text="Kısa Kısa"
+                           Margin="10"
+                       TextColor="White"
+                       FontSize="18"
+                       VerticalOptions="Start"
+                       HorizontalOptions="FillAndExpand"/>
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal" Margin="13"
+                                 VerticalOptions="End">
+                        <Label Text="1920'ler"
+                               FontSize="14"
+                               TextColor="White"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Fill"/>
+                        <Image Source="circle"
+                               WidthRequest="5"
+                               HeightRequest="5"
+                               Aspect="AspectFit"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Fill"/>
+                        <Label Text="Polis Dedektifleri"
+                               TextColor="White"
+                               FontSize="14"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Fill"/>
+                        <Image Source="circle"
+                               WidthRequest="5"
+                               HeightRequest="5"
+                               Aspect="AspectFit"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Fill"/>
+                        <Label Text="Tarihi"
+                               TextColor="White"
+                               FontSize="14"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Fill"/>
+                        <Image Source="circle"
+                               WidthRequest="5"
+                               HeightRequest="5"
+                               Aspect="AspectFit"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Fill"/>
+                        <Label Text="Vintage Suç"
+                               FontSize="14"
+                               TextColor="White"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Fill"/>
+                        <Image Source="circle"
+                               WidthRequest="5"
+                               HeightRequest="5"
+                               Aspect="AspectFit"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Fill"/>
+                        <Label Text="Dizi"
+                               FontSize="14"
+                               TextColor="White"
+                               VerticalOptions="Center"
+                               HorizontalOptions="Fill"/>
+                    </StackLayout>
+                </Grid>
+            </Grid>
+            <Grid Margin="10"
+                  VerticalOptions="Start"
+                  HorizontalOptions="FillAndExpand">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="0.3*"/>
+                    <ColumnDefinition Width="0.4*"/>
+                    <ColumnDefinition Width="0.3*"/>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Label Text="+"
+                           TextColor="White"
+                           FontSize="18"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Grid.Row="0"/>
+                    <Label Text="Listem"
+                           FontSize="14"
+                           TextColor="DimGray"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Grid.Row="1"/>
+                </Grid>
+                <Button Grid.Column="1"
+                        ImageSource="play"
+                        Text="Oynat"
+                        BackgroundColor="White"
+                        TextColor="Black"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"/>
+                <Grid Grid.Column="2">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <Image Source="info"
+                         Aspect="AspectFit"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Center"
+                         Grid.Row="0"/>
+                    <Label Text="Bilgi"
+                           FontSize="14"
+                           TextColor="DimGray"
+                           VerticalOptions="Center"
+                           HorizontalOptions="Center"
+                           Grid.Row="1"/>
+                </Grid>
+            </Grid>
+            <Label Text="Gündemdekiler"
+                   TextColor="White"
+                   Margin="10,5,0,0"
+                   VerticalOptions="Fill"
+                   HorizontalOptions="Start"
+                   FontSize="14"/>
+            <CollectionView ItemsSource="{Binding .}"
+                             HeightRequest="200"
+                            VerticalOptions="FillAndExpand"
+                            HorizontalOptions="Center"
+                            ItemsLayout="HorizontalList"
+                            x:Name="lstMovieCollection">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout HeightRequest="150"
+                                         WidthRequest="150">
+                            <Image Source="{Binding MovieImage}"
+                                   Margin="5"
+                                   Aspect="AspectFit"
+                                   VerticalOptions="Fill"
+                                   HorizontalOptions="Fill"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+            <Label Text="Listem"
+                   Margin="10,5,0,0"
+                   TextColor="White"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Start"
+                   FontSize="14"/>
+            <CollectionView ItemsSource="{Binding .}"
+                                    HeightRequest="200"
+                            VerticalOptions="FillAndExpand"
+                            HorizontalOptions="FillAndExpand"
+                            ItemsLayout="HorizontalList"
+                            x:Name="lstMovieCollection2">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout HeightRequest="150"
+                                         WidthRequest="150">
+                            <Image Source="{Binding MovieImage}"
+                                   Margin="5"
+                                       Grid.Row="0"
+                                   Aspect="AspectFill"
+                                   VerticalOptions="Fill"
+                                   HorizontalOptions="Fill"/>
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>

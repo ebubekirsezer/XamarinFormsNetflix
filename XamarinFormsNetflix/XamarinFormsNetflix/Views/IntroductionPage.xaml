@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:carousel="clr-namespace:CarouselView.FormsPlugin.Abstractions;assembly=CarouselView.FormsPlugin.Abstractions"
+             x:Class="XamarinFormsNetflix.Views.IntroductionPage"
+             BackgroundColor="Black"
+             NavigationPage.HasBackButton="False">
+    <NavigationPage.TitleView>
+        <Grid>
+            <Button BackgroundColor="Transparent"
+                Text="Yardım"
+                VerticalOptions="Center"
+                HorizontalOptions="EndAndExpand"
+                FontSize="14"
+                TextColor="White"/>
+            <Image Source="netflix"
+                   Aspect="AspectFit"
+               WidthRequest="75"
+               HeightRequest="75"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+        </Grid>
+    </NavigationPage.TitleView>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="0.9*"/>
+            <RowDefinition Height="0.1*"/>
+        </Grid.RowDefinitions>
+        <carousel:CarouselViewControl Grid.Row="0"
+                                      x:Name="myCarouselView"
+                                      VerticalOptions="FillAndExpand"
+                                      HorizontalOptions="FillAndExpand"
+                                      IndicatorsShape="Circle"
+                                      IndicatorsTintColor="DarkGray"
+                                      CurrentPageIndicatorTintColor="Red"
+                                      ShowIndicators="True"
+                                      ItemsSource="{Binding .}">
+            <carousel:CarouselViewControl.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <Image Source="{Binding IntroBackground}"
+                               Grid.Row="0"
+                               VerticalOptions="FillAndExpand"
+                               HorizontalOptions="FillAndExpand"
+                               Aspect="AspectFit"/>
+                    </Grid>
+                </DataTemplate>
+            </carousel:CarouselViewControl.ItemTemplate>
+        </carousel:CarouselViewControl>
+        <Button Grid.Row="1"
+                x:Name="btnContinue"
+                Text="OTURUM AÇ"
+                TextColor="White"
+                BackgroundColor="Red"
+                Clicked="BtnContinue_Clicked"
+                VerticalOptions="CenterAndExpand"
+                HorizontalOptions="FillAndExpand"/>
+    </Grid>
+</ContentPage>

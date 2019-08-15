@@ -1,0 +1,86 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             Visual="Material"
+             x:Class="XamarinFormsNetflix.Views.LoginPage" BackgroundColor="#0D0D0D"
+             NavigationPage.HasBackButton="False">
+    <NavigationPage.TitleView>
+        <Grid>
+            <ImageButton Source="left"
+                         Clicked="ImageButton_Clicked"
+                         VerticalOptions="Center"
+                         HorizontalOptions="Start"
+                         BackgroundColor="Transparent"/>
+            <Button BackgroundColor="Transparent"
+                Text="Yardım"
+                VerticalOptions="Center"
+                HorizontalOptions="EndAndExpand"
+                FontSize="14"
+                TextColor="White"/>
+            <Image Source="netflix"
+                   Aspect="AspectFit"
+               WidthRequest="75"
+               HeightRequest="75"
+                   VerticalOptions="Center"
+                   HorizontalOptions="Center"/>
+        </Grid>
+    </NavigationPage.TitleView>
+    <Grid VerticalOptions="Center"
+              HorizontalOptions="Center">
+        <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <Entry Grid.Row="1"
+               FontSize="16"
+               TextColor="White"
+               PlaceholderColor="White"
+               VerticalOptions="Center"
+               HorizontalOptions="Center"
+               WidthRequest="300"
+               Placeholder="E-posta veya telefon numarası"
+               BackgroundColor="DimGray"/>
+            <Grid HorizontalOptions="FillAndExpand"
+                  Grid.Row="2"
+                  VerticalOptions="CenterAndExpand">
+                <Entry  HorizontalOptions="FillAndExpand"
+                       Placeholder="Parola"
+                    PlaceholderColor="White"
+                    BackgroundColor="DimGray"
+                    WidthRequest="300"
+                       IsPassword="True"
+                       VerticalOptions="Center"/>
+                <Label Text="GÖSTER"
+                    BackgroundColor="Transparent"
+                    TextColor="White"
+                    FontSize="12"
+                       HorizontalOptions="End"
+                       Margin="0,0,10,0"
+                       VerticalOptions="Center">
+                </Label>
+            </Grid>
+            <Button BorderColor="DimGray"
+                BorderWidth="10"
+                BackgroundColor="#0D0D0D"
+                WidthRequest="250"
+                Text="Oturum Aç"
+                FontSize="16"
+                TextColor="White"
+                Clicked="Button_Clicked"
+                Grid.Row="3"/>
+            <Button BackgroundColor="#0D0D0D"
+                WidthRequest="150"
+                Text="Parolayı Kurtar"
+                FontSize="14"
+                TextColor="White"
+                Grid.Row="4"/>
+        </Grid>
+</ContentPage>
